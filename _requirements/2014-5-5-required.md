@@ -1,6 +1,6 @@
 ---
 id: 1
-title: Understand what people need
+title: People
 category: Recommended
 ---
 
