@@ -1,19 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     <meta name="author" content="{{ site.name }}" />
     <meta name="description" content="{{ site.description }}">
 
+        <!-- Add to homescreen for Chrome on Android -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}/images/touch/icon-128x128.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="{{ site.baseurl }}/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
@@ -21,36 +35,36 @@
   </head>
 
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-          
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-          
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
+    <header class="app-bar promote-layer">
+      <div class="app-bar-container">
+        <button class="menu"><img src="{{ site.baseurl }}/images/hamburger.svg" alt="Menu"></button>
+        <h1 class="logo"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+        <section class="app-bar-actions">
+        <!-- Put App Bar Buttons Here -->
+        </section>
       </div>
-    </div>
+    </header>
 
-    <div id="main" role="main" class="container">
+    <nav class="navdrawer-container promote-layer">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="{{ site.baseurl }}/">Blog</a></li>
+        <li><a href="{{ site.baseurl }}/about">About</a></li>
+      </ul>
+    </nav>
+
+    <main>
       {{ content }}
-    </div>
+    </main>
 
-    <div class="wrapper-footer">
-      <div class="container">
         <footer class="footer">
-          {% include svg-icons.html %}
         </footer>
-      </div>
-    </div>
+    <!-- build:js scripts/main.min.js -->
+    <script src="{{ site.baseurl }}/js/main.js"></script>
+    <!-- endbuild -->
 
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     {% include analytics.html %}
+    <!-- Built with love using Web Starter Kit -->
   </body>
 </html>
